@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import React, {useState,useMemo, useEffect} from 'react';
+import React, {useState} from 'react';
 import LoginPresenter from './LoginPresenter'
 
 function LoginContainer({ navigation, setIsLogin }) {
@@ -16,14 +16,11 @@ function LoginContainer({ navigation, setIsLogin }) {
         });
     }
 
-    const onPress = async (e) => {
+    const onPress = React.useCallback(async (e) => {
         const {userId, password} = inputs;
-        console.log(userId, password)
-        // navigation.push('Detail');
-        await AsyncStorage.removeItem('test');
         await AsyncStorage.setItem('test', JSON.stringify({'userId': userId, 'password': password}));
         setIsLogin(true);
-    };
+    })
 
     return (
         <LoginPresenter

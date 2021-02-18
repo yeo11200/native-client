@@ -5,6 +5,7 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
 import AppContainer from './src/components/AppContainer';
 import Loading from './src/components/Loading';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 App = () => {
@@ -12,6 +13,10 @@ App = () => {
 
   useEffect(()=>{
 
+    const removeStorage = async () => {
+      await AsyncStorage.removeItem('test');
+    }
+    removeStorage();
     setTimeout(()=>{
       setIsLoading(false);
     },3000);

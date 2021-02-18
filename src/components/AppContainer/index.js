@@ -11,8 +11,14 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const Stack = createStackNavigator();
 
+function lenent(isLogin) {
+    console.log('활성 사용자 수를 세는중...');
+    return isLogin;
+}
+
 function AppContainer() {
     
+    console.log('test', 'test');
     const [ isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
@@ -25,6 +31,8 @@ function AppContainer() {
           token();
     },[])
 
+    const isLoginYn = React.useMemo(() => lenent(isLogin), [isLogin]);
+
     return (
         <>
             <StatusBar barStyle="dark-content" />
@@ -35,8 +43,10 @@ function AppContainer() {
                   }}
                 >
                     {
-                        isLogin === false ? 
-                            <Stack.Screen name="Login" component={(navigation) => <LoginScreen navigation={navigation} setIsLogin={setIsLogin} />}/> : 
+                        isLoginYn === false ? 
+                            <Stack.Screen name="Login">
+                                { (navigation) => <LoginScreen navigation={navigation} setIsLogin={setIsLogin} /> }
+                            </Stack.Screen> : 
                             <Stack.Screen name="Detail" component={DetailScreen} />
                     }
                 </Stack.Navigator>

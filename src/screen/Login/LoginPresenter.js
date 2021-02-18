@@ -17,8 +17,6 @@ function LoginPresenter({ changeValue,onPress, inputs }) {
         // 해당 이벤트가 발생할 경우 keyboard가 사라진다. Keyboard.dismiss;
     }
 
-    console.log('input', inputs);
-
     return (
         <View style={styles.containerView}  behavior={ Platform.OS === 'IOS' ? "height" : "padding"}>
             <Text style={styles.logoText}>Sample Login</Text>
