@@ -54,6 +54,7 @@ npm install --save @react-native-community/async-storage
     - 해당 Layout 최상단에 flex를 넣어야한다.
     - justifyContent, alignItems : center를 넣으면 가운데 정렬을 한다.
     - alignSelf를 사용하게 되면 해당하는 tag에 대한 레이아웃을 잡아 줄 수 있다. 
+
 ```js
     useEffect(() => {
         if(Platform.OS === 'android'){
@@ -122,9 +123,12 @@ npm install --save react-native-toast-message
     - axios란 네트워크를 통신하기 위해서 사용을 한다.
     - axios : get, post, put, delete의 메소드를 사용해서 각 각 맞는 Rest API로 쏠 수 있다.
     - 해당하는 네트워크를 사용하려면, 권한 설정 및, 해당 플랫폼별로 설정을 해줘야한다.
-
+    - localhost가 아닌 10.0.2.2로 변경
+    - app 통신은 http/2로 작업을 해야한다.
 ```npm
 npm install --save axios
+
+// https://github.com/facebook/react-native/issues/24039 : axios 에러시
 ```
 
 ```js
@@ -132,4 +136,12 @@ axios.get('', {config});
 axios.post('', {data}, {config});
 axios.put('', {data}, {config});
 axios.delete('', {config});
+```
+
+
+- react native babel 정리
+```npm
+npm install --save babel-plugin-module-resolver
+
+yarn add babel-plugin-module-resolver  
 ```
