@@ -145,3 +145,12 @@ npm install --save babel-plugin-module-resolver
 
 yarn add babel-plugin-module-resolver  
 ```
+
+
+- react native typescript
+```npm
+npm install typescript @types/react @types/react-native --save-dev
+// typescript: typescript를 설치한다.
+// @types/react: typescript에 필요한 react의 type을 설치한다.
+// @types/react-native: typescript에 필요한 react-native의 type을 설치한다.
+```
