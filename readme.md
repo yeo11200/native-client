@@ -153,4 +153,8 @@ npm install typescript @types/react @types/react-native --save-dev
 // typescript: typescript를 설치한다.
 // @types/react: typescript에 필요한 react의 type을 설치한다.
 // @types/react-native: typescript에 필요한 react-native의 type을 설치한다.
+
+or 
+// 시작하자마자 typescript, 적용
+react-native init SampleProject --template typescript
 ```
