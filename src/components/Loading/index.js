@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ImageBackground } from "react-native"
 
-import image from '~/asstes/images/splash.png';
+import image from '../../asstes/images/splash.png';
 
 function Loading() {
     return (

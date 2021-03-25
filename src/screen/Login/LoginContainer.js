@@ -17,11 +17,15 @@ function LoginContainer({ navigation }) {
         console.log(userId, password)
     };
 
+    const goToStream = () => {
+        navigation.navigate('Stream')
+    }
     return (
         <LoginPresenter
             changeValue={changeValue}
             onPress={onPress}
             inputs={inputs}
+            goToStream={goToStream}
         />
     );
 }

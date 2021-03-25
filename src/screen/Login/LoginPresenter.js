@@ -6,7 +6,7 @@ const LoginIcon = (props) => (
     <Icon {...props} name='log-in-outline'/>
 );
 
-function LoginPresenter({ changeValue,onPress, inputs }) {
+function LoginPresenter({ changeValue,onPress, inputs, goToStream }) {
     
     const onChangeHandler = (name, e)=>{
         changeValue(name, e);
@@ -42,6 +42,7 @@ function LoginPresenter({ changeValue,onPress, inputs }) {
                  * onPress : web에서는 onClick을 해도 먹히지만, native에서는 onPress를 사용해서 클릭이벤트 전달
                  */}
                 <Button style={styles.button} status='primary' size='medium' accessoryLeft={LoginIcon} onPress={onPressHandler}>로그인</Button>
+                <Button style={styles.button} status='primary' size='medium' accessoryLeft={LoginIcon} onPress={goToStream}>스트리밍</Button>
             </View>
         </View>
     );
