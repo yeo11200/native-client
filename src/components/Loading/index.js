@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ImageBackground } from "react-native"
 
 import image from '../../asstes/images/splash.png';
