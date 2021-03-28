@@ -158,3 +158,15 @@ or
 // 시작하자마자 typescript, 적용
 react-native init SampleProject --template typescript
 ```
+
+- react native styled-component 
+    - styled-compoent를 사용하는 이유
+        - style를 다양한 컴포넌트들을 재사용하기위해서 사용을 한다.
+        - 가변으로 사용이 되기 때문에, 더욱 재 사용하기 쉽다.
+    - 단점
+        - 번들 크기가 커지고, 인젝션이 너무 커진다.
+        - 그래서 build 속도에서 차이가 날수가 있다.
+```npm
+npm install --save styled-components
+npm install --save-dev babel-plugin-styled-components @types/styled-components @types/styled-components-react-native
+```
